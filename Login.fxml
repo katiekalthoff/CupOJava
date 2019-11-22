@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="600.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="application.controller.LoginController">
+   <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="241.0" layoutY="48.0" text="Login" textAlignment="CENTER">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Label>
+      <Label fx:id="dateTimeLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="90.0" layoutY="139.0" prefHeight="53.0" prefWidth="421.0" textAlignment="CENTER">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="48.0" layoutY="225.0" text="Employee ID:" />
+      <Label layoutX="48.0" layoutY="314.0" text="Password:" />
+      <TextField fx:id="empIDField" layoutX="213.0" layoutY="217.0" />
+      <TextField fx:id="passwordField" layoutX="213.0" layoutY="306.0" />
+      <Button fx:id="loginButton" layoutX="248.0" layoutY="446.0" mnemonicParsing="false" text="Login" />
+      <Button fx:id="signUpButton" layoutX="453.0" layoutY="515.0" mnemonicParsing="false" text="Sign Up" />
+   </children>
+</AnchorPane>

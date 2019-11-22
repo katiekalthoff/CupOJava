@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.EmployeeProfileController">
+   <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="122.0" layoutY="-1.0" text="Employee Profile" textAlignment="CENTER">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Label>
+      <Label layoutX="20.0" layoutY="94.0" text="Personal Information">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="20.0" layoutY="300.0" text="Timesheet">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="312.0" layoutY="300.0" text="Salary Information">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="125.0" layoutX="14.0" layoutY="153.0" stroke="BLACK" strokeType="INSIDE" width="542.0" />
+      <Label layoutX="26.0" layoutY="161.0" text="Employee Name:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="26.0" layoutY="199.0" text="Position:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="26.0" layoutY="237.0" text="Current Special Projects:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="empNameLabel" layoutX="196.0" layoutY="161.0" prefHeight="30.0" prefWidth="231.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="positionLabel" layoutX="116.0" layoutY="201.0" prefHeight="30.0" prefWidth="231.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="projectsLabel" layoutX="250.0" layoutY="237.0" prefHeight="30.0" prefWidth="231.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="219.0" layoutX="20.0" layoutY="352.0" stroke="BLACK" strokeType="INSIDE" width="173.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="219.0" layoutX="314.0" layoutY="352.0" stroke="BLACK" strokeType="INSIDE" width="267.0" />
+      <Label layoutX="80.0" layoutY="359.0" text="Hours">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="32.0" layoutY="432.0" text="Leave Requested">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="37.0" layoutY="498.0" text="Leave Approved">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="hoursLabel" layoutX="35.0" layoutY="395.0" prefHeight="30.0" prefWidth="143.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="leaveReqLabel" layoutX="37.0" layoutY="466.0" prefHeight="30.0" prefWidth="143.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="leaveAppLabel" layoutX="35.0" layoutY="534.0" prefHeight="30.0" prefWidth="143.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="385.0" layoutY="359.0" text="Annual Salary:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="384.0" layoutY="432.0" text="Weekly Salary:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="321.0" layoutY="498.0" text="Salary Lost for Unpaid Leave:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="salaryAnnualLabel" layoutX="341.0" layoutY="395.0" prefHeight="30.0" prefWidth="214.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="salaryWeeklyLabel" layoutX="341.0" layoutY="466.0" prefHeight="30.0" prefWidth="214.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="salaryLostlLabel" layoutX="341.0" layoutY="528.0" prefHeight="30.0" prefWidth="214.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="weekSelectBox" layoutX="333.0" layoutY="84.0" prefHeight="51.0" prefWidth="231.0" promptText="Select Week..." />
+   </children>
+</AnchorPane>
