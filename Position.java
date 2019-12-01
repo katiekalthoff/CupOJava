@@ -4,16 +4,16 @@ public class Position {
 	
 	private String empName;
 	private String position;
-	private double hourlyWage;
-	private double weeklyHours;
+	private double hourlyWage = 0.0;
+	private double weeklyHours = 0.0;
 	private String admin; //yes or no
 	
-	private int lostSal;
-	private int annSal;
-	private int projSal;
+	private int lostSal = 0;
+	private int annSal = 0;
+	private int projSal = 0;
 	
-	private double LTR;
-	private double LTA;
+	private double LTR = 0.0;
+	private double LTA = 0.0;
 	
 	public Position(){
 		
