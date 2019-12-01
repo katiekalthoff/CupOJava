@@ -22,6 +22,11 @@ public class Position {
 		this.hourlyWage = hourlyWage;
 		this.setWeeklyHours(hours);
 		this.admin = admin;
+		this.lostSal = lostSal;
+		this.annSal = annSal;
+		this.projSal = projSal;
+		this.LTR = LTR;
+		this.LTA = LTA;
 	}
 	
 	public String getName() {
@@ -54,7 +59,6 @@ public class Position {
 	public String getAdmin() {
 		return admin;
 	}
-	
 	
 	public void setAdmin(String admin) {
 		this.admin= admin;
