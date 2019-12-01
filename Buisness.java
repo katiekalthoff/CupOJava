@@ -1,17 +1,22 @@
 package application.model;
+import java.util.*;
 
-import java.util.ArrayList;
+public class Business {
 
-public class Buisness {
-	public String name;
-	public String ppS;
-	public String ppE;
-	public ArrayList<Employee> emps;
+	private static ArrayList<Employee> employeeList = new ArrayList<Employee>();
+
 	
-	Buisness(String szName, String szppS, String szppE){
-		this.name = szName;
-		this.ppS = szppS;
-		this.ppE = szppE;
-		this.emps = new ArrayList<Employee>();
+	public Business(String name){
+
+		Business.employeeList = new ArrayList<Employee>();
 	}
+
+	public void addEmployee( Employee newEmployee) {
+		Business.employeeList.add(newEmployee);
+	}
+
+	public static ArrayList<Employee> getEmpList(){
+		return employeeList;	
+	}
+	
 }
