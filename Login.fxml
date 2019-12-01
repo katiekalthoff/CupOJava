@@ -6,8 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="600.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="application.controller.LoginController">
+<AnchorPane prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.LoginController">
    <children>
       <Label alignment="CENTER" contentDisplay="CENTER" layoutX="241.0" layoutY="48.0" text="Login" textAlignment="CENTER">
          <font>
@@ -23,7 +22,8 @@
       <Label layoutX="48.0" layoutY="314.0" text="Password:" />
       <TextField fx:id="empIDField" layoutX="213.0" layoutY="217.0" />
       <TextField fx:id="passwordField" layoutX="213.0" layoutY="306.0" />
-      <Button fx:id="loginButton" layoutX="248.0" layoutY="446.0" mnemonicParsing="false" text="Login" />
-      <Button fx:id="signUpButton" layoutX="453.0" layoutY="515.0" mnemonicParsing="false" text="Sign Up" />
+      <Button fx:id="loginButton" layoutX="248.0" layoutY="446.0" mnemonicParsing="false" onAction="#handle" text="Login" />
+      <Button fx:id="signUpButton" layoutX="453.0" layoutY="515.0" mnemonicParsing="false" onAction="#handle" text="Sign Up" />
+      <Label fx:id="errorMessage" alignment="CENTER" contentDisplay="CENTER" layoutX="131.0" layoutY="390.0" prefHeight="35.0" prefWidth="326.0" textAlignment="CENTER" />
    </children>
 </AnchorPane>
