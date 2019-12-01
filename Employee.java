@@ -1,3 +1,4 @@
+  
 package application.model;
 
 import java.io.File;
@@ -12,7 +13,13 @@ public class Employee {
 	private Position position;
 	public static String Name;
 	
+	private String DOB;
+	private String Addr;
+	private String phoneNum;
+	private String Email;
 
+
+	
 	public Employee(String empID, String password) {
 		this.empID = empID;
 		this.password = password;
@@ -36,14 +43,6 @@ public class Employee {
 		this.password = pass;
 	}
 
-		public Position getPosition() {
-		return position;
-	}
-	
-	public void setPosition(Position position) {
-		this.position = position;
-	}
-	
 	public Employee validate(String username, String password) {
 		 
 		 File file = new File("file name here");
@@ -81,4 +80,45 @@ public class Employee {
 		 scan.close();
 		 return null;	
 	}
+
+	public String getDOB() {
+		return DOB;
+	}
+
+	public void setDOB(String dOB) {
+		DOB = dOB;
+	}
+
+	public String getAddr() {
+		return Addr;
+	}
+
+	public void setAddr(String addr) {
+		Addr = addr;
+	}
+
+	public String getPhoneNum() {
+		return phoneNum;
+	}
+
+	public void setPhoneNum(String phoneNum) {
+		this.phoneNum = phoneNum;
+	}
+
+	public String getEmail() {
+		return Email;
+	}
+
+	public void setEmail(String email) {
+		Email = email;
+	}
+
+	public Position getPosition() {
+		return position;
+	}
+
+	public void setPosition(Position position) {
+		this.position = position;
+	}
+
 	}

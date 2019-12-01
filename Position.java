@@ -8,12 +8,19 @@ public class Position {
 	private double weeklyHours;
 	private String admin; //yes or no
 	
+	private int lostSal;
+	private int annSal;
+	private int projSal;
 	
-	public Position(String empName, String positionTitle, double hourlyWage, double hours, String admin) {
+	private double LTR;
+	private double LTA;
+	
+	public Position(String empName, String positionTitle, double hourlyWage, double hours, String admin,
+					int lostSal, int annSal, int projSal, double LTR, double LTA) {
 		this.empName = empName;
 		this.position = positionTitle;
 		this.hourlyWage = hourlyWage;
-		this.weeklyHours = hours;
+		this.setWeeklyHours(hours);
 		this.admin = admin;
 	}
 	
@@ -44,15 +51,6 @@ public class Position {
 		this.hourlyWage = wage;
 	}
 	
-	public double getWeeklyHours() {
-		return hourlyWage;
-	}
-	
-	
-	public void setWeeklyHours(double hours) {
-		this.weeklyHours= hours;
-	}
-	
 	public String getAdmin() {
 		return admin;
 	}
@@ -61,6 +59,52 @@ public class Position {
 	public void setAdmin(String admin) {
 		this.admin= admin;
 	}
+	public int getLostSal() {
+		return lostSal;
+	}
 
+	public void setLostSal(int lostSal) {
+		this.lostSal = lostSal;
+	}
+
+	public int getAnnSal() {
+		return annSal;
+	}
+
+	public void setAnnSal(int annSal) {
+		this.annSal = annSal;
+	}
+
+	public int getProjSal() {
+		return projSal;
+	}
+
+	public void setProjSal(int projSal) {
+		this.projSal = projSal;
+	}
+
+	public double getLTR() {
+		return LTR;
+	}
+
+	public void setLTR(double lTR) {
+		LTR = lTR;
+	}
+
+	public double getLTA() {
+		return LTA;
+	}
+
+	public void setLTA(double lTA) {
+		LTA = lTA;
+	}
+
+	public double getWeeklyHours() {
+		return weeklyHours;
+	}
+
+	public void setWeeklyHours(double weeklyHours) {
+		this.weeklyHours = weeklyHours;
+	}
 
 }
