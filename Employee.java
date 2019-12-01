@@ -36,6 +36,14 @@ public class Employee {
 		this.password = pass;
 	}
 
+		public Position getPosition() {
+		return position;
+	}
+	
+	public void setPosition(Position position) {
+		this.position = position;
+	}
+	
 	public Employee validate(String username, String password) {
 		 
 		 File file = new File("file name here");
