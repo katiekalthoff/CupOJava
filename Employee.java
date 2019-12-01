@@ -1,4 +1,3 @@
-  
 package application.model;
 
 import java.io.File;
@@ -11,7 +10,7 @@ public class Employee {
 	private String empID;
 	private String password;
 	private Position position;
-	public static String Name;
+	public String name;
 	
 	private String DOB;
 	private String Addr;
@@ -19,10 +18,25 @@ public class Employee {
 	private String Email;
 
 
+	public Employee()
+	{
+		this.empID = "";
+		this.password = "";
+	}
 	
 	public Employee(String empID, String password) {
 		this.empID = empID;
 		this.password = password;
+	}
+	
+	public String getName()
+	{
+		return this.name;
+	}
+	
+	public void setName(String n)
+	{
+		this.name = n;
 	}
 
 	public String getEmploeeID() {
