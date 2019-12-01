@@ -22,8 +22,12 @@ import javafx.scene.control.TextField;
 
 public class LoginController implements EventHandler<ActionEvent>{
 
+	public String employeeID;
+	public String password;
+	public String inputFile = "data/employees.csv";
+	
 	@FXML
-	private TextField empIdField;
+	private TextField empIDField;
 	
 	@FXML
 	private TextField passwordField;
@@ -36,16 +40,12 @@ public class LoginController implements EventHandler<ActionEvent>{
 	
 	@FXML
 	private Button signUpButton;
-
 	
-	String employeeID;
-	String password;
-	String inputFile = "";
+	
 	@Override
 	public void handle(ActionEvent event) {
-		
-		employeeID = empIdField.getText();
-		password = passwordField.getText();
+		this.employeeID = empIDField.getText();
+		this.password = passwordField.getText();
 
 			try {
 				if(((Button) event.getSource()).getText().equals(loginButton.getText())) { //login Button
@@ -53,17 +53,20 @@ public class LoginController implements EventHandler<ActionEvent>{
 					if(validate(inputFile) == true)
 					{
 						FXMLLoader loader = new FXMLLoader();
-						loader.setLocation(getClass().getResource("../view/EmployeeProfile.fxml"));
+						loader.setLocation(getClass().getResource("../view/employeeProfile.fxml"));
 						Parent root = loader.load();
 						Main.scene.setScene(new Scene(root, 800, 800));
 						Main.scene.show();
 					}
 					else
+					{
 						errorMessage.setText("Wrong ID or Password");
+					}
 						
 				}
 				else if(((Button) event.getSource()).getText().equals(signUpButton.getText())) { //sign up button
 				
+					System.out.println("CLicked Button\n");
 					FXMLLoader loader = new FXMLLoader();
 					loader.setLocation(getClass().getResource("../view/signUp.fxml"));
 					Parent root = loader.load();
@@ -94,7 +97,7 @@ public class LoginController implements EventHandler<ActionEvent>{
 		FileReader fileReader = new FileReader(file);
 		BufferedReader bufferedReader = new BufferedReader(fileReader);
 		
-		//Parse through file line-by-line and use data to populate a new Starship object
+		//Parse through file line-by-line and use data 
 		while((line = bufferedReader.readLine()) != null)
 		{
 			separatedLine = parse(line);
@@ -103,14 +106,9 @@ public class LoginController implements EventHandler<ActionEvent>{
 			{
 				bufferedReader.close();
 				return true;
-			}
-				
-			
-			//return false;
-			
+			}	
 		}
 		bufferedReader.close();
 		return false;
 	}
 }
-	
