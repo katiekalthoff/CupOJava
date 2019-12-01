@@ -57,44 +57,6 @@ public class Employee {
 		this.password = pass;
 	}
 
-	public Employee validate(String username, String password) {
-		 
-		 File file = new File("file name here");
-		// making sure that the file exists. Looking at the absolute path to fix any path related problem. 
-		if(file.exists()) {
-		  System.out.println(file.getAbsolutePath());
-		 } else {
-		  System.out.println("NO FILE!");
-		  System.out.println(file.getAbsolutePath());
-		 }
-		 
-		 Scanner scan = null;
-		 try {
-		  scan = new Scanner(file);
-		 }
-		 catch (FileNotFoundException e)
-		 {
-		  e.printStackTrace();
-		 }
-		 
-		 while(scan.hasNextLine() ) {
-
-		  String line = scan.nextLine();
-		  String[] word =line.split(",");
-
-		  if(username.equals(word[0])) {
-		   if(password.equals(word[1])) {
-		 
-		    Employee temp = new Employee(username, password);
-		    return temp;
-		   }
-		   
-		  }
-		 }
-		 scan.close();
-		 return null;	
-	}
-
 	public String getDOB() {
 		return DOB;
 	}
