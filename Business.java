@@ -1,5 +1,5 @@
 package application.model;
 
-public class Position {
+public class Business {
 
 }
