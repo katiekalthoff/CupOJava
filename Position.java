@@ -2,7 +2,6 @@ package application.model;
 
 public class Position {
 	
-	private String empName;
 	private String position;
 	private double hourlyWage = 0.0;
 	private double weeklyHours = 0.0;
@@ -12,34 +11,16 @@ public class Position {
 	private int annSal = 0;
 	private int projSal = 0;
 	
-	private double LTR = 0.0;
-	private double LTA = 0.0;
-	
 	public Position(){
 		
 	}
 	
-	public Position(String empName, String positionTitle, double hourlyWage, double hours, String admin,
-					int lostSal, int annSal, int projSal, double LTR, double LTA) {
-		this.empName = empName;
+	public Position(String positionTitle, double hourlyWage, double hours, String admin, int annSal) {
 		this.position = positionTitle;
 		this.hourlyWage = hourlyWage;
 		this.setWeeklyHours(hours);
 		this.admin = admin;
-		this.lostSal = lostSal;
 		this.annSal = annSal;
-		this.projSal = projSal;
-		this.LTR = LTR;
-		this.LTA = LTA;
-	}
-	
-	public String getName() {
-		return empName;
-	}
-	
-	
-	public void setName(String name) {
-		this.empName = name;
 	}
 	
 	public String getPosition() {
@@ -89,22 +70,6 @@ public class Position {
 
 	public void setProjSal(int projSal) {
 		this.projSal = projSal;
-	}
-
-	public double getLTR() {
-		return LTR;
-	}
-
-	public void setLTR(double lTR) {
-		LTR = lTR;
-	}
-
-	public double getLTA() {
-		return LTA;
-	}
-
-	public void setLTA(double lTA) {
-		LTA = lTA;
 	}
 
 	public double getWeeklyHours() {
