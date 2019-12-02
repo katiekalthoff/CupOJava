@@ -22,9 +22,7 @@
       <TextField fx:id="employeeID" layoutX="300.0" layoutY="88.0" prefHeight="51.0" prefWidth="240.0" />
       <PasswordField fx:id="password" layoutX="300.0" layoutY="139.0" prefHeight="51.0" prefWidth="240.0" />
       <Label fx:id="errorMessage" alignment="CENTER" contentDisplay="CENTER" layoutX="191.0" layoutY="438.0" prefHeight="35.0" prefWidth="218.0" textFill="RED" />
-      <PasswordField fx:id="birthdate" layoutX="300.0" layoutY="241.0" prefHeight="51.0" prefWidth="240.0" />
       <TextField fx:id="employeeName" layoutX="300.0" layoutY="190.0" prefHeight="51.0" prefWidth="240.0" />
-      <PasswordField fx:id="phoneNum" layoutX="300.0" layoutY="343.0" prefHeight="51.0" prefWidth="240.0" />
       <TextField fx:id="address" layoutX="300.0" layoutY="292.0" prefHeight="51.0" prefWidth="240.0" />
       <TextField fx:id="email" layoutX="300.0" layoutY="394.0" prefHeight="51.0" prefWidth="240.0" />
       <Label layoutX="66.0" layoutY="96.0" text="Employee ID:" />
@@ -36,5 +34,7 @@
       <Label layoutX="66.0" layoutY="402.0" text="Email:" />
       <Label layoutX="66.0" layoutY="464.0" text="Position:" />
       <ComboBox fx:id="position" layoutX="345.0" layoutY="456.0" prefWidth="150.0" />
+      <TextField fx:id="birthdate" layoutX="300.0" layoutY="241.0" prefHeight="51.0" prefWidth="240.0" />
+      <TextField fx:id="PhoneNum" layoutX="300.0" layoutY="343.0" prefHeight="51.0" prefWidth="240.0" />
    </children>
 </AnchorPane>
