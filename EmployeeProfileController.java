@@ -1,6 +1,12 @@
 package application.controller;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+
 import application.Main;
+import application.model.Employee;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -8,8 +14,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import application.controller.LoginController;
-import application.model.Employee;
 
 public class EmployeeProfileController {
 	
@@ -42,18 +46,18 @@ public class EmployeeProfileController {
 	@FXML
 	private Button updateInfo;
 	
-	String inputFile = "data/employees.csv";
-	
-	public void handle(ActionEvent event) { 
+	public void handle(ActionEvent event) {
+
 			try {
 				if(((Button) event.getSource()).getText().equals(logOut.getText())) { //login Button
+
 						FXMLLoader loader = new FXMLLoader();
 						loader.setLocation(getClass().getResource("../view/Login.fxml"));
 						Parent root = loader.load();
 						Main.scene.setScene(new Scene(root, 800, 800));
 						Main.scene.show();
 				}
-				else if(((Button) event.getSource()).getText().equals(projectedPay.getText())) { //projected pay button
+				else if(((Button) event.getSource()).getText().equals(projectedPay.getText())) { //sign up button
 				
 					FXMLLoader loader = new FXMLLoader();
 					loader.setLocation(getClass().getResource("../view/ProjectedPay.fxml"));
@@ -67,20 +71,22 @@ public class EmployeeProfileController {
 			}
 	}
 	
-	public void display(String employeeId, String password) {
-		
-		empName.setText("");
-		empId.setText("");
-		address.setText("");
-		phoneNum.setText("");
-		position.setText("");
-		email.setText("");
-		hours.setText("");
-		weeklySalary.setText("");
-		hourlyWage.setText("");
-		annualSalary.setText("");
-		
-
+	//Read input from passed in data file
+	public void displayLabels(String inputFile, Employee emp) throws IOException
+	{
+		double hourWage = emp.getPosition().getHourlyWage();
+		double weekSalary = hourWage * emp.getPosition().getWeeklyHours();
+		String wString = weekSalary+"";
+		empName.setText(emp.getName());
+		empId.setText(emp.getEmploeeID());
+		address.setText(emp.getAddr());
+		phoneNum.setText(emp.getPhoneNum());
+		position.setText(emp.getPosition().getPosition());
+		email.setText(emp.getEmail());
+		hours.setText(emp.getPosition().getStringWeeklyHours());
+		weeklySalary.setText(wString);
+		hourlyWage.setText(emp.getPosition().getStringHourlyWage());
+		annualSalary.setText(emp.getPosition().getStringAnnualSalary());
 	}
 
 }
