@@ -50,7 +50,7 @@ public class LoginController implements EventHandler<ActionEvent>{
 			try {
 				if(((Button) event.getSource()).getText().equals(loginButton.getText())) { //login Button
 
-					if(validate(inputFile) == true)
+					if(validate(this.employeeID) == true)
 					{
 						Employee newEmp = new Employee();
 						newEmp.loadEmployee("data/employees.csv", this.employeeID);
@@ -76,36 +76,46 @@ public class LoginController implements EventHandler<ActionEvent>{
 			}
 	}
 	
-	//Parse through a string
-	private String[] parse(String line)
+	public boolean validate(String empID) throws IOException
 	{
-		return line.split(",");
-	}
-	
-	//Read input from passed in data file
-	public boolean validate(String inputFile) throws IOException
-	{
-		//Declare Variables
-		String line;
-		String[] separatedLine;
+		Employee newEmp = new Employee();
+		newEmp.setEmployeeID(empID);
+		if(newEmp.alreadyExists("data/employees.csv") == true)
+			return true;
 		
-		//Read File
-		File file = new File(inputFile);
-		FileReader fileReader = new FileReader(file);
-		BufferedReader bufferedReader = new BufferedReader(fileReader);
-		
-		//Parse through file line-by-line and use data 
-		while((line = bufferedReader.readLine()) != null)
-		{
-			separatedLine = parse(line);
-			
-			if(employeeID.equals(separatedLine[1]) && password.equals(separatedLine[2]))
-			{
-				bufferedReader.close();
-				return true;
-			}	
-		}
-		bufferedReader.close();
 		return false;
 	}
+	
+//	//Parse through a string
+//	private String[] parse(String line)
+//	{
+//		return line.split(",");
+//	}
+//	
+//	//Read input from passed in data file
+//	public boolean validate(String inputFile) throws IOException
+//	{
+//		//Declare Variables
+//		String line;
+//		String[] separatedLine;
+//		
+//		//Read File
+//		File file = new File(inputFile);
+//		FileReader fileReader = new FileReader(file);
+//		BufferedReader bufferedReader = new BufferedReader(fileReader);
+//		
+//		//Parse through file line-by-line and use data 
+//		while((line = bufferedReader.readLine()) != null)
+//		{
+//			separatedLine = parse(line);
+//			
+//			if(employeeID.equals(separatedLine[1]) && password.equals(separatedLine[2]))
+//			{
+//				bufferedReader.close();
+//				return true;
+//			}	
+//		}
+//		bufferedReader.close();
+//		return false;
+//	}
 }
