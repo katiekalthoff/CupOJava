@@ -59,7 +59,7 @@ public class SignUpController implements EventHandler<ActionEvent>
 			e.printStackTrace();
 		}
 		
-		loadProfile();
+		newEmp.loadProfile(newEmp);
 	}
 	
 	public Employee setEmployee(String empID, String pass, String name, String bDay, String phone, String eM, String addr, String pos)
@@ -101,18 +101,18 @@ public class SignUpController implements EventHandler<ActionEvent>
 		return emp;
 	}
 	
-	public void loadProfile()
-	{
-		try {
-		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(getClass().getResource("../view/employeeProfile.fxml"));
-		Parent root = loader.load();
-		Main.scene.setScene(new Scene(root, 800, 800));
-		Main.scene.show();
-		}
-		catch(Exception e)
-		{
-			e.printStackTrace();
-		}
-	}
+//	public void loadProfile()
+//	{
+//		try {
+//		FXMLLoader loader = new FXMLLoader();
+//		loader.setLocation(getClass().getResource("../view/employeeProfile.fxml"));
+//		Parent root = loader.load();
+//		Main.scene.setScene(new Scene(root, 800, 800));
+//		Main.scene.show();
+//		}
+//		catch(Exception e)
+//		{
+//			e.printStackTrace();
+//		}
+//	}
 }
