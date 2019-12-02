@@ -2,6 +2,8 @@ package application.model;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.*;
 import application.model.Position;
 
@@ -57,6 +59,44 @@ public class Employee {
 		this.password = pass;
 	}
 
+	public Employee validate(String username, String password) {
+		 
+		 File file = new File("file name here");
+		// making sure that the file exists. Looking at the absolute path to fix any path related problem. 
+		if(file.exists()) {
+		  System.out.println(file.getAbsolutePath());
+		 } else {
+		  System.out.println("NO FILE!");
+		  System.out.println(file.getAbsolutePath());
+		 }
+		 
+		 Scanner scan = null;
+		 try {
+		  scan = new Scanner(file);
+		 }
+		 catch (FileNotFoundException e)
+		 {
+		  e.printStackTrace();
+		 }
+		 
+		 while(scan.hasNextLine() ) {
+
+		  String line = scan.nextLine();
+		  String[] word =line.split(",");
+
+		  if(username.equals(word[0])) {
+		   if(password.equals(word[1])) {
+		 
+		    Employee temp = new Employee(username, password);
+		    return temp;
+		   }
+		   
+		  }
+		 }
+		 scan.close();
+		 return null;	
+	}
+
 	public String getDOB() {
 		return DOB;
 	}
@@ -95,6 +135,30 @@ public class Employee {
 
 	public void setPosition(Position position) {
 		this.position = position;
+	}
+	
+	public void add() throws IOException
+	{
+		FileWriter empWriter = new FileWriter("data/employees.csv", true);
+		empWriter.append(this.name);
+		empWriter.append(",");
+		empWriter.append(this.empID);
+		empWriter.append(",");
+		empWriter.append(this.password);
+		empWriter.append(",");
+		empWriter.append(this.DOB);
+		empWriter.append(",");
+		empWriter.append(this.Addr);
+		empWriter.append(",");
+		empWriter.append(this.phoneNum);
+		empWriter.append(",");
+		empWriter.append(this.Email);
+		empWriter.append(",");
+		empWriter.append(this.getPosition().getPosition());
+		empWriter.append("\n");
+		
+		empWriter.flush();
+		empWriter.close();
 	}
 
 	}
