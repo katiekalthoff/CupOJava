@@ -93,5 +93,23 @@ public class Position {
 		String annualSal = Integer.toString(this.annSal);
 		
 	}
+	
+	public String getStringHourlyWage()
+	{
+		String hours = Double.toString(this.hourlyWage);
+		return hours;
+	}
+	
+	public String getStringWeeklyHours()
+	{
+		String hours = Double.toString(this.weeklyHours);
+		return hours;
+	}
+	
+	public String getStringAnnualSalary()
+	{
+		String hours = Integer.toString(this.annSal);
+		return hours;
+	}
 
 }
