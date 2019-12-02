@@ -1,63 +1,38 @@
 package application.controller;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.Scanner;
-
-import application.Main;
-import application.model.Employee;
-import application.model.Position;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 
 public class EmployeeProfileController {
 	
 	@FXML
+	private Label annualSalary;
+	@FXML
+	private Label empId;
+	@FXML
+	private Label hours;
+	@FXML
+	private Label address;
+	@FXML
+	private Label phoneNum;
+	@FXML
+	private Label weeklySalary;
+	@FXML
+	private Label hourlyWage;
+	@FXML
 	private Label empName;
-	
 	@FXML
-	private Label empID;
-	
+	private Label position;
 	@FXML
-	private Label empPos;
-	
+	private Label email;
 	@FXML
-	private Label empHou;
-	
+	private Button projectedPay;
 	@FXML
-	private Label empLR;
-	
+	private Button changePassword;
 	@FXML
-	private Label empLA;
-	
+	private Button logOut;
 	@FXML
-	private Label anSal;
-	
-	@FXML
-	private Label wkSal;
-	
-	@FXML
-	private Label losSal;
-	
-	public void initalize() {
-		empName.setText();
-		//empID.setText();
-		//empPos.setText();
-		//empLR.setText();
-		//empLA.setText();
-		//anSal.setText();
-		//wkSal.setText();
-		//losSal.setText();
-		//empHou.setText();
-	}
+	private Button updateInfo;
+
 }
