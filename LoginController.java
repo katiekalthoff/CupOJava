@@ -52,11 +52,9 @@ public class LoginController implements EventHandler<ActionEvent>{
 
 					if(validate(inputFile) == true)
 					{
-						FXMLLoader loader = new FXMLLoader();
-						loader.setLocation(getClass().getResource("../view/employeeProfile.fxml"));
-						Parent root = loader.load();
-						Main.scene.setScene(new Scene(root, 800, 800));
-						Main.scene.show();
+						Employee newEmp = new Employee();
+						newEmp.loadEmployee("data/employees.csv", this.employeeID);
+						newEmp.loadProfile(newEmp);
 					}
 					else
 					{
@@ -66,7 +64,6 @@ public class LoginController implements EventHandler<ActionEvent>{
 				}
 				else if(((Button) event.getSource()).getText().equals(signUpButton.getText())) { //sign up button
 				
-					System.out.println("CLicked Button\n");
 					FXMLLoader loader = new FXMLLoader();
 					loader.setLocation(getClass().getResource("../view/signUp.fxml"));
 					Parent root = loader.load();
@@ -75,7 +72,7 @@ public class LoginController implements EventHandler<ActionEvent>{
 				}
 	         }
 			catch(Exception e){
-				
+				e.printStackTrace();
 			}
 	}
 	
