@@ -1,18 +1,26 @@
 package application.model;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.*;
+
+import application.Main;
+import application.controller.EmployeeProfileController;
 import application.model.Position;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 
 public class Employee {
 	
 	private String empID;
 	private String password;
 	private Position position;
-	public String name;
+	private String name;
 	
 	private String DOB;
 	private String Addr;
@@ -160,5 +168,89 @@ public class Employee {
 		empWriter.flush();
 		empWriter.close();
 	}
-
+	
+	public void loadProfile(Employee emp)
+	{
+		try {
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(getClass().getResource("../view/employeeProfile.fxml"));
+		Parent root = loader.load();
+		EmployeeProfileController empController = loader.getController();
+		Main.scene.setScene(new Scene(root, 800, 800));
+		Main.scene.show();
+		
+		empController.displayLabels("data/employees.csv", emp);
+		
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
 	}
+	
+	//Parse through a string
+	private String[] parse(String line)
+	{
+		return line.split(",");
+	}
+	
+	//Read input from passed in data file
+	public void loadEmployee(String inputFile, String employeeID) throws IOException
+	{
+		//Declare Variables
+		String line;
+		String[] separatedLine;
+		
+		//Read File
+		File file = new File(inputFile);
+		FileReader fileReader = new FileReader(file);
+		BufferedReader bufferedReader = new BufferedReader(fileReader);
+		
+		//Parse through file line-by-line and use data 
+		while((line = bufferedReader.readLine()) != null)
+		{
+			separatedLine = parse(line);
+			
+			if(employeeID.equals(separatedLine[1]))
+			{
+				this.setName(separatedLine[0]);
+				this.setEmployeeID(employeeID);
+				this.setPassword(separatedLine[2]);
+				this.setDOB(separatedLine[3]);
+				this.setAddr(separatedLine[4]);
+				this.setPhoneNum(separatedLine[5]);
+				this.setEmail(separatedLine[6]);
+				//this.position.setPosition(separatedLine[7]);
+				String pos = separatedLine[7];
+				
+				if(pos.equals("Intern"))
+				{
+					Position newPosition = new Position(pos, 10.00, 20.00, "no", 10400);
+					this.setPosition(newPosition);
+				}
+				else if(pos.equals("Seasonal"))
+				{
+					Position newPosition = new Position(pos, 15.00, 20.00, "no", 3900);
+					this.setPosition(newPosition);
+				}
+				else if(pos.equals("Entry"))
+				{
+					Position newPosition = new Position(pos, 18.00, 40.00, "no", 37440);
+					this.setPosition(newPosition);
+				}
+				else if(pos.equals("Mid-Level"))
+				{
+					Position newPosition = new Position(pos, 30.00, 40.00, "no", 62400);
+					this.setPosition(newPosition);
+				}
+				else if(pos.equals("Admin"))
+				{
+					Position newPosition = new Position(pos, 50.00, 40.00, "yes", 104000);
+					this.setPosition(newPosition);
+				}
+			}	
+		}
+		bufferedReader.close();
+	}
+
+}
