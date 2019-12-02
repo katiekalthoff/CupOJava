@@ -76,7 +76,7 @@ public class EmployeeProfileController {
 	{
 		double hourWage = emp.getPosition().getHourlyWage();
 		double weekSalary = hourWage * emp.getPosition().getWeeklyHours();
-		String wString = weekSalary+"";
+		String wString = "$" + weekSalary+"";
 		empName.setText(emp.getName());
 		empId.setText(emp.getEmploeeID());
 		address.setText(emp.getAddr());
