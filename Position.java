@@ -96,7 +96,7 @@ public class Position {
 	
 	public String getStringHourlyWage()
 	{
-		String hours = Double.toString(this.hourlyWage);
+		String hours = "$" + Double.toString(this.hourlyWage);
 		return hours;
 	}
 	
@@ -108,7 +108,7 @@ public class Position {
 	
 	public String getStringAnnualSalary()
 	{
-		String hours = Integer.toString(this.annSal);
+		String hours = "$" + Integer.toString(this.annSal);
 		return hours;
 	}
 
