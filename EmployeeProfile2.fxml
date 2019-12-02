@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.EmployeeProfileController">
+   <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="122.0" layoutY="-1.0" prefHeight="30.0" prefWidth="278.0" text="Employee Profile" textAlignment="CENTER">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Label>
+      <Label layoutX="20.0" layoutY="58.0" text="Personal Information">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="15.0" layoutY="282.0" text="Position Information">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="169.0" layoutX="14.0" layoutY="84.0" stroke="BLACK" strokeType="INSIDE" width="574.0" />
+      <Label layoutX="31.0" layoutY="85.0" text="Employee Name:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="27.0" layoutY="141.0" text="Address:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="phoneNumLabel" layoutX="110.0" layoutY="204.0" prefHeight="30.0" prefWidth="231.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="emailLabel" layoutX="146.0" layoutY="139.0" prefHeight="30.0" prefWidth="231.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="projectsLabel" layoutX="250.0" layoutY="237.0" prefHeight="30.0" prefWidth="231.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="180.0" layoutX="20.0" layoutY="332.0" stroke="BLACK" strokeType="INSIDE" width="560.0" />
+      <Label layoutX="32.0" layoutY="475.0" text="Annual Salary:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="30.0" layoutY="439.0" text="Weekly Salary:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="positionLabel" layoutX="133.0" layoutY="347.0" prefHeight="30.0" prefWidth="214.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="salaryWeeklyLabel" layoutX="194.0" layoutY="437.0" prefHeight="30.0" prefWidth="135.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="salaryLostlLabel" layoutX="190.0" layoutY="473.0" prefHeight="30.0" prefWidth="143.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="26.0" layoutY="169.0" text="Phone Number:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="26.0" layoutY="206.0" text="Email:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="28.0" layoutY="349.0" text="Position:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="29.0" layoutY="377.0" text="Hours:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="salaryAnnualLabel1" layoutX="123.0" layoutY="375.0" prefHeight="30.0" prefWidth="214.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="salaryAnnualLabel2" layoutX="189.0" layoutY="407.0" prefHeight="30.0" prefWidth="122.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="28.0" layoutY="409.0" text="Hourly Wage:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Button layoutX="424.0" layoutY="547.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="143.0" text="Projected Pay" />
+      <Label fx:id="addrLabel" layoutX="207.0" layoutY="167.0" prefHeight="30.0" prefWidth="231.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="empNameLabel" layoutX="207.0" layoutY="83.0" prefHeight="30.0" prefWidth="231.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="31.0" layoutY="113.0" text="Employee ID:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Button layoutX="232.0" layoutY="547.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="135.0" text="Change Password" />
+      <Button layoutX="477.0" layoutY="14.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="109.0" text="Log Out" />
+      <Button layoutX="26.0" layoutY="547.0" mnemonicParsing="false" text="Update Personal Info" />
+   </children>
+</AnchorPane>
