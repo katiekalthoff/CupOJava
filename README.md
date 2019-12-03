@@ -13,3 +13,5 @@ Functionalities
     - A user may view their profile which will hold information pertaining to their position
   3. Wage Projections
     - A user may enter times to clock in and out of work in order to determine their total hours worked and pay for a week
+  4. Update User Information
+    - A user may update and save their information if they already have an account
