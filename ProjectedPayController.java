@@ -1,5 +1,7 @@
 package application.controller;
 
+import java.util.ArrayList;
+
 import application.Main;
 import application.model.Employee;
 import javafx.event.ActionEvent;
@@ -78,34 +80,39 @@ public class ProjectedPayController {
 				Main.scene.show();
 			}
 			else if(((Button) event.getSource()).getText().equals(profileButton.getText())) {
-				Employee newEmp = new Employee();
-				newEmp.loadEmployee("data/employees.csv", this.employeeId);
-				newEmp.loadProfile(newEmp);
+				//Employee newEmp = new Employee();
+				//newEmp.loadEmployee("data/employees.csv", this.employeeId);
+				//newEmp.loadProfile(newEmp);
 				
 			}
 			else if(((Button) event.getSource()).getText().equals(calculatePay.getText())) {
-				Double inMonday1 = Double.valueOf(inMon1.getText());
-				Double outMonday1 = Double.valueOf(outMon1.getText());
-				Double inTuesday1 = Double.valueOf(inTue1.getText());
-				Double outTuesday1 = Double.valueOf(outTue1.getText());
-				Double inWednesday1 = Double.valueOf(inWed1.getText());
-				Double outWednesday1 = Double.valueOf(outWed1.getText());
-				Double inThursday1 = Double.valueOf(inThur1.getText());
-				Double outThursday1 = Double.valueOf(outThur1.getText());
-				Double inFriday1 = Double.valueOf(inFri1.getText());
-				Double outFriday1 = Double.valueOf(outFri1.getText());
-				Double inMonday2 = Double.valueOf(inMon2.getText());
-				Double outMonday2 = Double.valueOf(outMon2.getText());
-				Double inTuesday2 = Double.valueOf(inTue2.getText());
-				Double outTuesday2 = Double.valueOf(outTue2.getText());
-				Double inWednesday2 = Double.valueOf(inWed2.getText());
-				Double outWednesday2 = Double.valueOf(outWed2.getText());
-				Double inThursday2 = Double.valueOf(inThur2.getText());
-				Double outThursday2 = Double.valueOf(outThur2.getText());
-				Double inFriday2 = Double.valueOf(inFri2.getText());
-				Double outFriday2 = Double.valueOf(outFri2.getText());
 				
+				ArrayList<String[]> times = new ArrayList<String[]>();
+				 
+				String mon1[] = {inMon1.getText(), outMon1.getText()};
+				times.add(mon1);
+				String tue1[] = {inTue1.getText(), outTue1.getText()};
+				times.add(tue1);
+				String wed1[] = {inWed1.getText(), outWed1.getText()};
+				times.add(wed1);
+				String thur1[] = {inThur1.getText(), outThur1.getText()};
+				times.add(thur1);
+				String fri1[] = {inFri1.getText(), outFri1.getText()};
+				times.add(fri1);
 				
+				String mon2[] = {inMon2.getText(), outMon2.getText()};
+				times.add(mon2);
+				String tue2[] = {inTue2.getText(), outTue2.getText()};
+				times.add(tue2);
+				String wed2[] = {inWed2.getText(), outWed2.getText()};
+				times.add(wed2);
+				String thur2[] = {inThur2.getText(), outThur2.getText()};
+				times.add(thur2);
+				String fri2[] = {inFri2.getText(), outFri2.getText()};
+				times.add(fri2);
+				
+		
+
 				
 				
 			}
