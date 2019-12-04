@@ -1,7 +1,7 @@
 # CupOJava
 
 Cloning and Running Application
-  1. Dowlnoad CupOJava-FinalProject.zip
+  1. Dowlnoad CS3443FinalProject.zip
   2. Extract the project folder
   2. Import project folder into Eclipse (which can run Java 8)
   3. Run project
